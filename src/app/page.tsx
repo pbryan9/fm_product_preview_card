@@ -1,95 +1,120 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
+
+import Image from 'next/image';
+import styled from 'styled-components';
+import mobileImage from '@/images/image-product-mobile.jpg';
+import desktopImage from '@/images/image-product-desktop.jpg';
+import cartIcon from '@/images/icon-cart.svg';
+
+const Wrapper = styled.article`
+  width: 90vw;
+  margin: 30px auto;
+
+  font-size: var(--fs-standard);
+  font-family: var(--font-montserrat);
+
+  background-color: hsl(var(--white));
+
+  border-radius: 12px;
+  overflow: clip;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ProductImage = styled(Image)`
+  object-fit: cover;
+
+  flex-basis: 33%;
+`;
+
+const InfoContainer = styled.section`
+  background-color: hsl(var(--white));
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+const ProductCategory = styled.p`
+  text-transform: uppercase;
+  color: hsl(var(--gray-blue));
+  letter-spacing: 0.25rem;
+`;
+
+const ProductName = styled.h1`
+  font-family: var(--font-fraunces);
+  font-size: 2rem;
+
+  line-height: 1;
+`;
+
+const ProductDescription = styled.p`
+  color: hsl(var(--gray-blue));
+`;
+
+const ProductPrice = styled.p`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
+
+const CurrentPrice = styled.span`
+  font-family: var(--font-fraunces);
+  font-size: 2rem;
+  color: hsl(var(--dark-cyan));
+
+  line-height: 1;
+`;
+
+const OriginalPrice = styled.span`
+  color: hsl(var(--gray-blue));
+  text-decoration: line-through;
+`;
+
+const CartButton = styled.button`
+  background-color: hsl(var(--dark-cyan));
+  color: hsl(var(--white));
+  border: none;
+  border-radius: 8px;
+
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+`;
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <Wrapper>
+      <ProductImage
+        src={mobileImage}
+        alt='elegant, square-shaped perfume bottle with Gabrielle and CHANEL wordmarks'
+      />
+      <InfoContainer>
+        <ProductCategory>Perfume</ProductCategory>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <ProductName>Gabrielle Essence Eau De Parfum</ProductName>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <ProductDescription>
+          A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL.
+        </ProductDescription>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+        <ProductPrice>
+          <CurrentPrice>$149.99</CurrentPrice>
+          <OriginalPrice>$169.99</OriginalPrice>
+        </ProductPrice>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+        <CartButton>
+          <Image src={cartIcon} alt='' />
+          Add to Cart
+        </CartButton>
+      </InfoContainer>
+    </Wrapper>
+  );
 }
