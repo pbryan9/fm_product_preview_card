@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const Wrapper = styled.footer`
@@ -8,19 +9,21 @@ const Wrapper = styled.footer`
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+
+  min-width: 100vw;
 `;
 
 export default function Attribution() {
   return (
     <Wrapper>
       Challenge by{' '}
-      <a href='https://www.frontendmentor.io?ref=challenge' target='_blank'>
+      <Link href='https://www.frontendmentor.io?ref=challenge' target='_blank'>
         Frontend Mentor
-      </a>
+      </Link>
       . Coded by{' '}
-      <a href='https://pattyb.dev' target='_blank'>
+      <Link href='https://pattyb.dev' target='_blank'>
         Patrick Bryan
-      </a>
+      </Link>
       .
     </Wrapper>
   );

@@ -96,7 +96,6 @@ h6 {
 }
 
 body {
-  min-height: 100vh;
   background-color: hsl(var(--cream));
 
   font-family: var(--font-montserrat);
