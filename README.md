@@ -32,8 +32,10 @@ Users should be able to:
 
 ### Links
 
+https://fm-product-preview-card-gz5bws76n-pbryan9s-projects.vercel.app
+
 - Solution URL: [GitHub repo](https://github.com/pbryan9/fm_product_preview_card)
-- Live Site URL: [Vercel deploy](https://fm-product-preview-card-7azfvt2fj-pbryan9s-projects.vercel.app)
+- Live Site URL: [Vercel deploy](https://fm-product-preview-card-eosin.vercel.app/)
 
 ## My process
 
