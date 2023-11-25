@@ -8,7 +8,7 @@ import cartIcon from '@/images/icon-cart.svg';
 
 const BREAKPOINT = '650px';
 
-const Wrapper = styled.article`
+const Wrapper = styled.main`
   width: 90vw;
   max-width: 343px;
   margin: 30px auto;
